@@ -1,0 +1,110 @@
+<html>
+    <head>     
+        <script type="text/javascript" src= "jquery.js"></script>   
+
+        <script type="text/javascript">			
+            function insertar()
+            {
+                $.ajax({
+                            type:"GET",
+                            dataType: "json",
+                            url:"http://localhost:8080/primerparciallab4/index.php/persona/guardar",
+                            data: {
+                                "nombre" : document.getElementById("nombre5").value,
+                                "apellido" : document.getElementById("apellido5").value,
+                                "dni" : document.getElementById("dni5").value,
+                                "foto" : document.getElementById("foto5").value,
+                                "sexo" : document.getElementById("sexo5").value,
+                                "password" : document.getElementById("password5").value
+                            }
+                        })
+                        .done(function(respuesta){
+                            alert("Se agregó correctamente");
+                        })
+                        .fail(function(error){
+                            alert("Hay un error");
+                        });					
+            }	
+            function modificar()
+            {			
+                $.ajax({
+                            type:"PUT",
+                            dataType: "json",
+                            url:"http://localhost:8080/primerparciallab4/index.php/persona/modificar",
+                            data: {
+                                "id" : document.getElementById("id5").value,
+                                "nombre" : document.getElementById("nombre5").value,
+                                "apellido" : document.getElementById("apellido5").value,
+                                "foto" : document.getElementById("foto5").value,
+                                "sexo" : document.getElementById("sexo5").value,
+                                "password" : document.getElementById("password5").value
+                            }
+                        })
+                        .done(function(respuesta){
+                            alert("Se modificó correctamente");
+                        })
+                        .fail(function(error){
+                            alert("Hay un error");
+                        });		
+                        
+            }
+            function eliminar()
+            {			
+                
+                $.ajax({
+                            type:"DELETE",
+                            dataType: "json",
+                            url:"http://localhost:8080/primerparciallab4/index.php/persona/borrar",
+                            data: {
+                                "id" : document.getElementById("id5").value
+                            }
+                        })
+                        .done(function(respuesta){
+                            alert("Se eliminó correctamente");
+                        })
+                        .fail(function(error){
+                            alert("Hay un error");
+                        });			
+            }
+		</script>
+    </head>
+    <body>
+        <!--BORRAR?+++<form action="http://localhost:8080/lab4/index.php/login" method="POST">
+            <h1>Login</h1>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre"> </input><br>
+            <input type="password" id="dni" name="dni" placeholder="Dni"> </input><br>
+            <input type="submit"></input>
+            <br>
+        </form>-->
+        
+        <form action="http://localhost:8080/primerparciallab4/index.php/personas" method="GET">
+            <h1>Personas</h1>
+            <input type="submit"></input>
+            <br>
+        </form>
+        
+        <form action="http://localhost:8080/primerparciallab4/index.php/persona" method="GET">
+            <h1>Persona</h1>
+            <input type="password" id="id" name="id" placeholder="ID"> </input><br>
+            <input type="submit"></input>
+            <br>
+        </form>
+
+        <div>
+            <h1>ABM</h1>
+            <input type="text" id="id5" name="id" placeholder="ID"> </input><br>
+            <input type="text" id="nombre5" name="nombre" placeholder="Nombre"> </input><br>
+            <input type="text" id="apellido5" name="apellido" placeholder="Apellido"> </input><br>
+            <input type="text" id="dni5" name="dni" placeholder="DNI"> </input><br>
+            <input type="text" id="foto5" name="foto" placeholder="FOTO"> </input><br>
+            <input type="text" id="sexo5" name="sexo" placeholder="SEXO"> </input><br>
+            <input type="text" id="password5" name="password" placeholder="PASSWORD"> </input><br>
+            <input type="button" value="Insertar" onclick="insertar();"></input><br>
+            <input type="button" value="Modificar" onclick="modificar();"></input><br>
+            <input type="button" value="Eliminar" onclick="eliminar();"></input><br>
+            <br>
+        </div>
+
+        
+    </body>
+</html>
