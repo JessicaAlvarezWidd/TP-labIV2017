@@ -1,1 +1,12 @@
+<li *ngFor="let item of clientes | async">
+    {{item.nombre}}
+    {{item.apellido}}
+    {{item.sexo}}
+    {{item.dni}}
+    {{item.direccion.calle}}
+    {{item.direccion.numero}}
+    {{item.direccion.barrio}}
+
+</li>
+
 <router-outlet></router-outlet>

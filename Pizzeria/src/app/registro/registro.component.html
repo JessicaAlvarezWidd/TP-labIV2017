@@ -1,7 +1,16 @@
-<div>
-  <input type="text" placeholder="email">
-  <input type="password" placeholder="password">
-  <input type="button" value="registrar">
-
-  <input type="button" value="Volver al Login" (click)="volver()">
-<div>
+<form (ngSubmit)="darAlta(usuario)"> 
+  <div>
+    <input type="text" [(ngModel)]="usuario.email" name="email" placeholder="email" required><br>
+    <input type="password" [(ngModel)]="usuario.pass" name="pass" placeholder="password" required><br>
+    <input type="text" [(ngModel)]="usuario.nombre" name="nombre" placeholder="nombre" required><br>
+    <input type="text" [(ngModel)]="usuario.apellido" name="apellido" placeholder="apellido" required><br>
+    <input type="text" [(ngModel)]="usuario.dni" name="dni" placeholder="dni" required><br>
+    
+      <label>Direccion</label>
+        <input type="text" [(ngModel)]="usuario.calle" name="calle" placeholder="calle" required><br>
+        <input type="text" [(ngModel)]="usuario.numero" name="numero" placeholder="numero" required><br>
+        <input type="text" [(ngModel)]="usuario.barrio" name="barrio" placeholder="barrio" required><br>
+    </div>
+    <button type="submit">Dar alta</button><br>
+  </form>
+<input type="button" value="Volver al Login" (click)="volver()"><br>

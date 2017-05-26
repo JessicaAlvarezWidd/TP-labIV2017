@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Router} from '@angular/router';
 
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 
 @Component({
@@ -10,10 +11,19 @@ import {Router} from '@angular/router';
 })
 export class AppComponent {
   title = 'app works!';
+  clientes: FirebaseListObservable<any[]>;
 
-  constructor(private parentRouter : Router)
-  {
+
+  constructor(private parentRouter : Router,
+              private db: AngularFireDatabase){
+    this.clientes = db.list('/clientes');
+    //console.log(this.clientes);
+    this.clientes.subscribe(user=>{console.log(user)});
+
+    
+
     this.parentRouter.navigateByUrl('/login');
+
   }
 
   

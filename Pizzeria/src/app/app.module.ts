@@ -17,10 +17,26 @@ import { AbmLocalComponent } from './abm-local/abm-local.component';
 import { InfoPedidoComponent } from './info-pedido/info-pedido.component';
 
 import { RouterModule, Routes } from '@angular/router';
+//import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireModule } from 'angularfire2';
 
 const appRoutes: Routes = [
 { path: 'login', component: LoginComponent },
 { path: 'registro', component: RegistroComponent }];
+
+export const environment = {
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyDVis_7U93M6TQxP1Iyw2HXvnPD4nEeup8",
+    authDomain: "tplab4.firebaseapp.com",
+    databaseURL: "https://tplab4.firebaseio.com",
+    projectId: "tplab4",
+    storageBucket: "tplab4.appspot.com",
+    messagingSenderId: "967233327244"
+  }
+};
 
 @NgModule({
   declarations: [
@@ -41,7 +57,10 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AngularFireModule.initializeApp(environment.firebase),    
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,9 +8,16 @@ import {Router} from '@angular/router';
 })
 export class RegistroComponent implements OnInit {
 
+  usuario = {};
+
   constructor(private parentRouter : Router) { }
 
   ngOnInit() {
+  }
+
+  darAlta()
+  { 
+    alert("entre alta");
   }
 
   volver()
