@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-locales',
   templateUrl: './locales.component.html',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LocalesComponent implements OnInit {
 
-  constructor() { }
+  locales: FirebaseListObservable<any[]>;
+
+  constructor(private Router : Router,
+              private db: AngularFireDatabase) {
+
+                this.locales = db.list('/locales');
+                this.locales.subscribe(user=>{console.log(user)});
+
+  }
 
   ngOnInit() {
   }

@@ -3,7 +3,6 @@ import {Router} from '@angular/router';
 
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,22 +12,22 @@ export class AppComponent {
   title = 'app works!';
   clientes: FirebaseListObservable<any[]>;
 
+ 
 
-  constructor(private parentRouter : Router,
+  constructor(private Router : Router,
               private db: AngularFireDatabase){
     this.clientes = db.list('/clientes');
     //console.log(this.clientes);
     this.clientes.subscribe(user=>{console.log(user)});
 
+   
+    this.Router.navigateByUrl('/usuarios');
     
-
-    this.parentRouter.navigateByUrl('/login');
-
   }
 
   
 }
-
+/*
 class Animal {
     name: string;
     constructor(theName: string) { this.name = theName; }
@@ -61,3 +60,4 @@ let tom: Animal = new Horse("Tommy the Palomino");
 
 sam.move();
 tom.move(34);
+*/

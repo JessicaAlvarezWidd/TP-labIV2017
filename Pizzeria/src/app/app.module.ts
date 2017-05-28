@@ -21,10 +21,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
+import { ModificarComponent } from './modificar/modificar.component';
 
 const appRoutes: Routes = [
 { path: 'login', component: LoginComponent },
-{ path: 'registro', component: RegistroComponent }];
+{ path: 'registro', component: RegistroComponent },
+{ path: 'usuarios', component: UsuariosComponent },
+{ path: 'modificar/:id', component: ModificarComponent },
+{ path: 'locales', component: LocalesComponent }];
 
 export const environment = {
   production: false,
@@ -51,7 +55,8 @@ export const environment = {
     UsuariosComponent,
     OperacionesComponent,
     AbmLocalComponent,
-    InfoPedidoComponent
+    InfoPedidoComponent,
+    ModificarComponent
   ],
   imports: [
     BrowserModule,

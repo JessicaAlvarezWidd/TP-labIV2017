@@ -1,3 +1,12 @@
-<p>
-  locales works!
-</p>
+<div *ngFor="let item of locales | async">
+
+    {{item.nombre}} <br>
+    {{item.apellido}} <br>
+    {{item.sexo}} <br>
+    {{item.dni}} <br>
+    {{item.direccion.calle}} <br>
+    {{item.direccion.numero}} <br>
+    {{item.direccion.barrio}} <br>
+    <input *ngIf="true" type="button" (click)="eliminar(item.$key)" value="Eliminar">
+    <input *ngIf="true" type="button" (click)="modificar(item)" value="Modificar"><br>
+</div>

@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="false">
   <input type="text" placeholder="email">
   <input type="password" placeholder="password">
   <input type="text" placeholder="nombre">
@@ -13,4 +13,21 @@
   <input type="button" value="Dar alta">
 
   <input type="button" value="Volver al Login" (click)="volver()">
+</div>
+
 <div>
+  <input type="button" value="Ver Locales" (click)="locales()">
+</div>
+
+<div *ngFor="let item of clientes | async">
+
+    {{item.nombre}} <br>
+    {{item.apellido}} <br>
+    {{item.sexo}} <br>
+    {{item.dni}} <br>
+    {{item.direccion.calle}} <br>
+    {{item.direccion.numero}} <br>
+    {{item.direccion.barrio}} <br>
+    <input *ngIf="true" type="button" (click)="eliminar(item.$key)" value="Eliminar">
+    <input *ngIf="true" type="button" (click)="modificar(item)" value="Modificar"><br>
+</div>  

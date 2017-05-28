@@ -1,0 +1,11 @@
+    <form  (ngSubmit)="aceptar()">
+      nombre<input type="text" [(ngModel)]="usuario.nombre" name="nombre"><br>
+      apellido<input type="text" [(ngModel)]="usuario.apellido" name="apellido"><br>
+      sexo<input type="text" [(ngModel)]="usuario.sexo" name="sexo"><br>
+      dni<input type="text" [readonly]="true" [(ngModel)]="usuario.dni" name="dni"><br>
+      calle<input type="text" [(ngModel)]="usuario.direccion.calle" name="calle"><br>
+      numero<input type="text" [(ngModel)]="usuario.direccion.numero" name="numero"><br>
+      barrio<input type="text" [(ngModel)]="usuario.direccion.barrio" name="barrio"><br>
+      <input type="submit"  value="Aceptar">
+      <input type="button" (click)="cancelar()" value="Cancelar">
+    </form>
