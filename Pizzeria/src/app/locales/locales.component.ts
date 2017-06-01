@@ -19,16 +19,8 @@ export class LocalesComponent implements OnInit {
                 this.locales.subscribe(user=>{
                 user.forEach(element => {
                   //var unLocal = new Locales(element.barrio,element.calle,element.numero);
-                  
-                  
                 });
-
-
               });
-
-              
-               
-
   }
 
   ngOnInit() {
@@ -36,8 +28,13 @@ export class LocalesComponent implements OnInit {
 
   generateArray(obj){
     this.i++;
-    console.log("entre al generar array" + " " + this.i);
+    //console.log("entre al generar array" + " " + this.i);
     return Object.keys(obj).map((key)=>{ return obj[key]});
+  }
+
+  ofertas(a)
+  {
+    this.Router.navigateByUrl('/ofertas');
   }
 
 }

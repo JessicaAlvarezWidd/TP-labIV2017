@@ -1,9 +1,12 @@
+
 <div *ngFor="let item of locales | async">
+    <input type="button" value="OFERTAS ESTE LOCAL" (click)="ofertas(item.$key)">
     <h1><h1>{{item.$key}}</h1></h1>
     {{item.direccion.barrio}} <br>
     {{item.direccion.calle}} <br>
     {{item.direccion.numero}} <br> 
 
+<div *ngIf="false">
     <h1>PRODUCTOS</h1>
     <div *ngFor="let producto of generateArray(item['productos'])">
         
@@ -43,9 +46,5 @@
   
                  
     </div><br><br><br>
-
-
-    
-
+    </div>
 </div>
-

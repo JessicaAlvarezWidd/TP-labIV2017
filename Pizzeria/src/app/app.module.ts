@@ -28,7 +28,8 @@ const appRoutes: Routes = [
 { path: 'registro', component: RegistroComponent },
 { path: 'usuarios', component: UsuariosComponent },
 { path: 'modificar/:id', component: ModificarComponent },
-{ path: 'locales', component: LocalesComponent }];
+{ path: 'locales', component: LocalesComponent },
+{ path: 'ofertas', component: OfertasComponent }];
 
 export const environment = {
   production: false,

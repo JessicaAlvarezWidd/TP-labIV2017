@@ -43,4 +43,10 @@ export class UsuariosComponent implements OnInit {
     this.Router.navigateByUrl('/locales');
   }
 
+  login()
+  {
+    this.Router.navigateByUrl('/ofertas'); 
+  }
+
+
 }

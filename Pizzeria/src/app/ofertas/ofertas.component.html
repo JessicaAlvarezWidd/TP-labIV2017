@@ -1,3 +1,18 @@
-<p>
-  ofertas works!
-</p>
+<div> </div>
+<div *ngFor="let item of locales | async">
+    <h1><h1>{{item.$key}}</h1></h1>
+
+    <h1>OFERTAS</h1>
+    <div *ngFor="let oferta of generateArray(item['ofertas'])">
+        
+        <h2>  {{oferta.nombre}}</h2>        
+        {{oferta.precio}} <br>
+        <h3>Productos De la Oferta </h3><br>
+        <div *ngFor="let ProductoOferta of generateArray(oferta['productosOfertas'])">
+            {{ProductoOferta}}
+        </div>
+        <input type="button" (click)="reservar(oferta.nombre,item.$key)" value="Reservar">
+       </div>
+                 
+  
+</div>
