@@ -36,4 +36,6 @@ export class LoginComponent implements OnInit {
    
     this.parentRouter.navigateByUrl('/registro');
   }
+
+  //hay que arreglar todo este login
 }
