@@ -1,0 +1,13 @@
+    <form  (ngSubmit)="aceptar()">
+      nombre<input type="text" [(ngModel)]="local.nombre" name="nombre"><br>      
+      <div>
+        calle<input type="text" [(ngModel)]="local.direccion.calle" name="calle"><br>
+        numero<input type="text" [(ngModel)]="local.direccion.numero" name="numero"><br>
+        barrio<input type="text" [(ngModel)]="local.direccion.barrio" name="barrio"><br>
+      </div>
+      foto Uno<input type="text" [(ngModel)]="local.fotoUno" name="fotoUno"><br>
+      foto Dos<input type="text" [(ngModel)]="local.fotoDos" name="fotoDos"><br>
+      foto Tres<input type="text" [(ngModel)]="local.fotoTres" name="fotoTres"><br>
+      <input type="submit"  value="Aceptar">
+      <input type="button" (click)="cancelar()" value="Cancelar">
+    </form>

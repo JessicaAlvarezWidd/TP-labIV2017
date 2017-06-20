@@ -1,5 +1,0 @@
-generar archivos excel
-/angular2-json2csv
-para pasar de un JSON a un EXCEL
-
-https://developers.google.com/maps/documentation/directions/?hl=es-419 (te devuelve la direccion)

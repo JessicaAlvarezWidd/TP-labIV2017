@@ -1,0 +1,44 @@
+<div *ngFor="let item of locales | async">
+    <div *ngIf="item.$key == clave">
+
+    <input type="button" (click)="altaProducto(item.$key)" value="Agregar Producto">
+    <input type="button" (click)="altaOferta(item.$key)" value="Agregar Oferta">
+    
+    <h1><h1>{{item.nombre}}</h1></h1>   
+    Barrio: {{item.direccion.barrio}} <br>
+    Calle: {{item.direccion.calle}} <br>
+    Numero: {{item.direccion.numero}} <br> 
+
+        <div *ngIf="tengoUnProducto">
+            <h1>PRODUCTOS</h1>
+            <input type="button" (click)="reservarProductos(item.$key)" value="Reservar Productos">   
+            <div *ngFor="let producto of generateArray(item['productos']);let i = index">
+                
+                <h2>  {{producto.nombre}}</h2>
+                Seleccionar Producto<input type="checkbox" [(ngModel)]="arrayClaveProductos[i]" name="{{producto.nombre}}">
+    
+                {{arrayClaveProductos[i]}}<br>
+                {{producto.foto1}} <br>                
+                {{producto.precio}} <br>
+                           
+            </div>  
+        </div>
+        
+
+        <div *ngIf="tengoUnaOferta">
+            <h1>OFERTAS</h1>            
+            <div *ngFor="let oferta of generateArray(item['ofertas'])">
+                
+                <h2>  {{oferta.nombre}}</h2>        
+                {{oferta.precio}} <br>
+                <h3>Productos De la Oferta </h3><br>
+                <div *ngFor="let ProductoOferta of generateArray(oferta['productosOfertas'])">
+                    {{ProductoOferta}}
+                </div>
+                <input type="button" (click)="reservar(oferta.nombre,item.$key)" value="Reservar {{oferta.nombre}}">                 
+                  
+            </div>
+        </div>
+        
+    </div>
+</div>

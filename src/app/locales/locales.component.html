@@ -1,0 +1,51 @@
+
+<div *ngFor="let item of locales | async">
+    
+    <h1><h1>{{item.nombre}}</h1></h1>
+    <input type="button" value="SELECCIONAR LOCAL {{item.$key}}" (click)="verLocal(item.$key)"><br>
+    Barrio: {{item.direccion.barrio}} <br>
+    Calle: {{item.direccion.calle}} <br>
+    Numero: {{item.direccion.numero}} <br> 
+
+<!--
+    <h1>PRODUCTOS</h1>
+    <div *ngFor="let producto of generateArray(item['productos'])">
+        
+        <h2>  {{producto.nombre}}</h2> <br>
+        {{producto.foto1}} <br>
+        {{producto.foto2}} <br>
+        {{producto.foto3}} <br>
+        {{producto.precio}} <br>
+                 
+    </div>  
+
+    <h1>OFERTAS</h1>
+    <div *ngFor="let oferta of generateArray(item['ofertas'])">
+        
+        <h2>  {{oferta.nombre}}</h2>        
+        {{oferta.precio}} <br>
+        <h3>Productos De la Oferta </h3><br>
+        <div *ngFor="let ProductoOferta of generateArray(oferta['productosOfertas'])">
+            {{ProductoOferta}}
+        </div>
+                 
+    </div>   
+
+    <h1>PEDIDOS</h1>
+    <div *ngFor="let pedido of generateArray(item['pedidos']); let i = index">
+        
+        <h2>  PEDIDO {{i+1}}</h2> <br>
+        {{pedido.precio}}<br>
+        <h3>Productos del Pedido {{i+1}}</h3><br>
+        <div *ngFor="let ProductoPedido of generateArray(pedido['listaProductos'])">
+            {{ProductoPedido}}<br>
+        </div>
+        <h3>Ofertas del Pedido {{i+1}}</h3> <br>
+        <div *ngFor="let OfertaPedido of generateArray(pedido['listaOfertas'])">
+            {{OfertaPedido}}<br>
+        </div>
+  
+                 
+    </div><br><br><br>
+    </div>
+-->

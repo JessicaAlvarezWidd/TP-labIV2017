@@ -1,0 +1,33 @@
+<!--<div> 
+    <input type="button" value="Ver Locales" (click)="localesMostrar()">  
+</div>
+<div *ngFor="let item of locales | async">
+    <h1><h1>{{item.nombre}}</h1></h1>
+
+    <h1>OFERTAS</h1>
+    <div *ngFor="let oferta of generateArray(item['ofertas'])">
+        
+        <h2>  {{oferta.nombre}}</h2>        
+        {{oferta.precio}} <br>
+        <h3>Productos De la Oferta </h3><br>
+        <div *ngFor="let ProductoOferta of generateArray(oferta['productosOfertas'])">
+            {{ProductoOferta}}
+        </div>
+        <input type="button" (click)="reservar(oferta.nombre,item.$key)" value="Reservar">
+       </div>
+                 
+  
+</div>-->
+
+<div>
+    <div *ngFor="let producto of productosObjetos;let i = index">
+        <h2>{{producto.nombre}}</h2>
+            Seleccionar Producto<input type="checkbox" [(ngModel)]="arrayClaveProductos[i]" name="{{producto.nombre}}">
+            {{arrayClaveProductos[i]}}<br>
+            {{producto.foto1}} <br>                
+            {{producto.precio}} <br>
+    </div>
+    <input type="text" placeholder="nombre Oferta" [(ngModel)]="nombre">    
+    <input type="button" (click)="aceptar()" value="Aceptar">
+    <input type="button" (click)="cancelar()" value="Cancelar">
+</div>

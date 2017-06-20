@@ -1,0 +1,9 @@
+    <form  (ngSubmit)="aceptar()">
+      nombre<input type="text" [(ngModel)]="producto.nombre" name="nombre"><br>      
+      precio<input type="text" [(ngModel)]="producto.precio" name="precio"><br>
+      foto Uno<input type="text" [(ngModel)]="producto.fotoUno" name="fotoUno"><br>
+      <!--foto Dos<input type="text" [(ngModel)]="producto.fotoDos" name="fotoDos"><br>
+      foto Tres<input type="text" [(ngModel)]="producto.fotoTres" name="fotoTres"><br>-->
+      <input type="submit"  value="Aceptar">
+      <input type="button" (click)="cancelar()" value="Cancelar">
+    </form>
