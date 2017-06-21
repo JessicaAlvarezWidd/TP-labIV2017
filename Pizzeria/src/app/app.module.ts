@@ -23,6 +23,13 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 import { ModificarComponent } from './modificar/modificar.component';
 
+//SERVICIOS.
+import { WsService }  from './services/ws/ws.service';
+import { AutService } from './services/auth/aut.service';
+import { VerificarJWTService } from './services/verificar-jwt/verificar-jwt.service';
+//JSON WEB TOKEN.
+import { JwtModule } from './jwt/jwt.module';
+
 const appRoutes: Routes = [
 { path: 'login', component: LoginComponent },
 { path: 'registro', component: RegistroComponent },
@@ -60,7 +67,7 @@ export const environment = {
     OperacionesComponent,
     AbmLocalComponent,
     InfoPedidoComponent,
-    ModificarComponent
+    ModificarComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,9 +76,10 @@ export const environment = {
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(environment.firebase),    
     AngularFireDatabaseModule,
-    AngularFireAuthModule
-  ],
-  providers: [],
+    AngularFireAuthModule,
+    JwtModule
+  ],  
+  providers: [WsService,AutService,VerificarJWTService],//AGREGO SERVICIOS.
   bootstrap: [AppComponent]
 })
 export class AppModule { }

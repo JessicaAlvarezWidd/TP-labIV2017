@@ -74,34 +74,44 @@ export class OfertasComponent implements OnInit {
       if(this.nombre.length < 3)
       {
         console.log("el nombre es menor a 3");
+        alert("El nombre debe ser mayor a 3 letras");
       }
       else{
-        console.log("el nombre es 3 o mas");
-      }
-      /*this.localOfertas = this.db.list('/locales/' + this.clave + "/ofertas");
-      this.localProductos.subscribe(item =>{
-        console.log("lo que tengo en la fb", item);
-      })
-
-      this.localProductos.update(this.producto.nombre,{
-        "foto1" : this.producto.fotoUno,
-        //"foto2" : this.producto.fotoDos,
-        //"foto3" : this.producto.fotoTres,
-        "nombre" : this.producto.nombre,
-        "precio" : this.producto.precio
-
+        this.localOfertas = this.db.list('/locales/' + this.clave + "/ofertas");
+        var precio : number = 0;
+        var unJson = JSON.parse('{ "myString": "string", "myNumber": 4 }');
+        var stringJSon = '{';
+        for(var i=0;this.cantidadProductos > i;i++)
         {
-  "nombre" : "promoCopada",
-  "precio" : 40,
-  "productosOfertas" : {
-    "prod1" : "arroz",
-    "prod2" : "cafe"
-  }
+          if(this.arrayClaveProductos[i])
+          {
+            precio += Number(this.productosObjetos[i].precio);
+            stringJSon += ' "prod' + i + '": ' + '"' + this.productosObjetos[i].nombre + '"' + ',';
+          }
+          
         }
+        console.log(stringJSon.substr(0,(stringJSon.length - 1)));
+        stringJSon = stringJSon.substr(0,(stringJSon.length - 1));
+        stringJSon += '}';
+        var unJson = JSON.parse(stringJSon);
+        console.log(unJson);
+        //console.log(precio);
+        console.log(stringJSon);
+        this.localOfertas.update(this.nombre,
+          {
+          "nombre" : this.nombre,
+          "precio" : (precio * 0.8),
+          "productosOfertas" : unJson
+          
+        });
 
-      });
+        
 
-      this.Router.navigate(['/local-seleccionado', this.clave]);*/
+     // });
+
+      this.Router.navigate(['/local-seleccionado', this.clave]);
+      }
+      
     }
     else{
       alert("TIENE QUE SELECCIONAR AL MENOS 2 PRODUCTOS PARA FORMAR UNA OFERTA");

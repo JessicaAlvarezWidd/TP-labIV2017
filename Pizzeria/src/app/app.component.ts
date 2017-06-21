@@ -21,7 +21,7 @@ export class AppComponent {
     this.clientes.subscribe(user=>{console.log(user)});
 
    
-    this.Router.navigateByUrl('/usuarios');
+    this.Router.navigateByUrl('/login');
     
   }
 

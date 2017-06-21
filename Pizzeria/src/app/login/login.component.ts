@@ -5,6 +5,8 @@ import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 
+import { WsService }  from '../services/ws/ws.service';
+
 
 @Component({
   selector: 'app-login',
@@ -14,17 +16,23 @@ import * as firebase from 'firebase/app';
 export class LoginComponent implements OnInit {
 
   user: Observable<firebase.User>;
+  miUser : Usuario;
 
   constructor(private parentRouter : Router,
-              public afAuth: AngularFireAuth) {
+              public afAuth: AngularFireAuth,
+              public ws : WsService) {
       this.user = afAuth.authState;
+      this.miUser = new Usuario("asd@asd.com","asdasd");
+      this.ws.CrearToken(this.miUser).then(item =>{console.log(item);});
+
   }
 
   ngOnInit() {
   }
 
   login() {
-    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    //this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    //this.afAuth.auth.signInWithEmailAndPassword
   }
 
   logout() {
@@ -36,6 +44,13 @@ export class LoginComponent implements OnInit {
    
     this.parentRouter.navigateByUrl('/registro');
   }
+}
 
-  //hay que arreglar todo este login lalalal
+export class Usuario{
+  email : string;
+  password : string;
+  constructor(email,pass){
+    this.email = email;
+    this.password = pass;
+  }
 }
