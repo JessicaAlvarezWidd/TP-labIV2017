@@ -3,3 +3,71 @@
     width: 500px;
     height: 500px;
 }
+
+.todo{
+    background-image: url(https://st.depositphotos.com/1006734/3449/v/950/depositphotos_34493129-stock-illustration-pizza-seamless-background.jpg);
+    background-repeat: no-repeat;
+    background-repeat: repeat-x;
+    background-position: right top;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.panel {
+    border: 1px solid #F4A460; 
+    border-radius:0;
+    transition: box-shadow 0.5s;
+}
+
+.panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+}
+
+.panel-footer .btn:hover {
+    border: 1px solid #F4A460;
+    background-color: #fff !important;
+    color: #F4A460;
+}
+
+.panel-heading {
+    color: #fff !important;
+    background-color:#F4A460 !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.panel-footer {
+    background-color: #fff !important;
+}
+
+.panel-footer h3 {
+    font-size: 32px;
+}
+
+.panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.panel-footer .btn {
+    margin: 15px 0;
+    background-color:#F4A460;
+    color: #fff;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    font-size: small;
+}
+
+.jumbotron{
+    background-color: #FFFAF0 !important;
+}

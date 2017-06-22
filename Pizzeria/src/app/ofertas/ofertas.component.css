@@ -1,5 +1,5 @@
 .panel {
-    border: 1px solid #f4511e; 
+    border: 1px solid #F4A460; 
     border-radius:0;
     transition: box-shadow 0.5s;
 }
@@ -9,14 +9,14 @@
 }
 
 .panel-footer .btn:hover {
-    border: 1px solid #f4511e;
+    border: 1px solid #F4A460;
     background-color: #fff !important;
-    color: #f4511e;
+    color: #F4A460;
 }
 
 .panel-heading {
     color: #fff !important;
-    background-color: #f4511e !important;
+    background-color: #F4A460 !important;
     padding: 25px;
     border-bottom: 1px solid transparent;
     border-top-left-radius: 0px;
@@ -40,6 +40,24 @@
 
 .panel-footer .btn {
     margin: 15px 0;
-    background-color: #f4511e;
+    background-color: #F4A460;
     color: #fff;
+}
+
+.todo{
+    background-image: url(https://st.depositphotos.com/1006734/3449/v/950/depositphotos_34493129-stock-illustration-pizza-seamless-background.jpg);    
+    background-repeat: no-repeat;
+    background-repeat: repeat-x;
+    background-position: right top;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.container{
+    background-image: url(https://st.depositphotos.com/1006734/3449/v/950/depositphotos_34493129-stock-illustration-pizza-seamless-background.jpg);    
+    background-repeat: no-repeat;
+    background-repeat: repeat-x;
+    background-position: right top;
+    background-attachment: fixed;
+    background-size: 100% 100%;
 }

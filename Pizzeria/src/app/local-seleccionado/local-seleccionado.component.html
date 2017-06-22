@@ -1,10 +1,11 @@
+<div class="todo">
 <div class="container-fluid" *ngFor="let item of locales | async">
     <div *ngIf="item.$key == clave">
         <div class="jumbotron">
             <h1>{{item.nombre}}</h1> 
-            Barrio: {{item.direccion.barrio}} <br>
-            Calle: {{item.direccion.calle}} <br>
-            Numero: {{item.direccion.numero}} <br> 
+            <p>Direccion:{{item.direccion.calle}} {{item.direccion.numero}}</p> <br>
+             <p>{{item.direccion.barrio}}</p> <br>
+ 
         </div>
         <div class="text-center">
             <h2 *ngIf="tengoUnProducto">SUS PRODUCTOS Y OFERTAS</h2>    
@@ -59,3 +60,4 @@
     </div>  
 </div>
 <div #map id="map" style="height:400px;width:100%;"></div>
+</div>

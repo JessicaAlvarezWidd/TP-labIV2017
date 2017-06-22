@@ -1,3 +1,4 @@
+   <div class="todo">
   <div class="container"><br><br>
 
   <div class="card card-container" >
@@ -8,8 +9,7 @@
 
       <input  name="nombre" [(ngModel)]="local.nombre" type="text" (focusout)="Verificar(1)" (keyup)="Keyup(1)" class="form-control" id="nombre" placeholder="nombre">
       
-      <input name="calle" [(ngModel)]="local.direccion.calle" type="text"  (focusout)="Verificar(2)" (keyup)="Keyup(2)" class="form-control" id="password" placeholder="calle"><br>
-
+      <input name="calle" [(ngModel)]="local.direccion.calle" type="text"  (focusout)="Verificar(2)" (keyup)="Keyup(2)" class="form-control" id="password" placeholder="calle">
       <input  name="numero" [(ngModel)]="local.direccion.numero" type="text"  oninput="this.value=this.value.replace(/[^0-9]/g,'');" (focusout)="Verificar(1)" (keyup)="Keyup(1)" class="form-control" id="email" placeholder="numero">
       
       <input name="barrio" [(ngModel)]="local.direccion.barrio" type="text" (focusout)="Verificar(2)" (keyup)="Keyup(2)" class="form-control" id="password" placeholder="barrio"><br>
@@ -22,4 +22,5 @@
   
   </div><br><br><br><br><br><br><br><br><br><br>
 
+</div>
 </div>

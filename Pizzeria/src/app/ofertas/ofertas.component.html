@@ -10,10 +10,9 @@
 </div> -->
     
 
-
-<div class="container-fluid">
-        
-    
+<div class="todo"> 
+  <div class="container">
+<div class="container-fluid">       
   <div class="text-center">
     <h2>ARMA TU OFERTA</h2>    
   </div>
@@ -25,7 +24,7 @@
         </div>        
         <div class="panel-footer">
           <h3>{{producto.precio}}</h3>
-          <h4><input type="checkbox" [(ngModel)]="arrayClaveProductos[i]" name="{{producto.nombre}}"></h4>
+          <h4><input type="checkbox" [(ngModel)]="arrayClaveProductos[i]" name="{{producto.nombre}}"></h4><br>
         </div>
       </div> 
     </div> 
@@ -35,4 +34,6 @@
     
    
   </div>
+</div>
+</div>
 </div>

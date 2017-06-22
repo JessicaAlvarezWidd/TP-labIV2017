@@ -6,7 +6,7 @@
       <input type="button" (click)="cancelar()" value="Cancelar">
     </form>-->
 
-
+<div class="todo">
   <div class="container"><br><br>
 
   <div class="card card-container" >
@@ -17,9 +17,9 @@
 
       <input  name="nombre" [(ngModel)]="producto.nombre" type="text" (focusout)="Verificar(1)" (keyup)="Keyup(1)" class="form-control" id="nombre" placeholder="nombre">
       
-      <input name="precio" [(ngModel)]="producto.precio" type="text"  oninput="this.value=this.value.replace(/[^0-9]/g,'');" (focusout)="Verificar(2)" (keyup)="Keyup(2)" class="form-control" id="password" placeholder="precio"><br>
+      <input name="precio" [(ngModel)]="producto.precio" type="text"  oninput="this.value=this.value.replace(/[^0-9]/g,'');" (focusout)="Verificar(2)" (keyup)="Keyup(2)" class="form-control" id="password" placeholder="precio">
 
-      <input  name="numero" [(ngModel)]="producto.fotoUno" type="text"   (focusout)="Verificar(1)" (keyup)="Keyup(1)" class="form-control" id="email" placeholder="foto">
+      <input  name="numero" [(ngModel)]="producto.fotoUno" type="text"   (focusout)="Verificar(1)" (keyup)="Keyup(1)" class="form-control" id="email" placeholder="foto"><br>
       
      
       
@@ -31,4 +31,5 @@
   
   </div><br><br><br><br><br><br><br><br><br><br>
 
+</div>
 </div>

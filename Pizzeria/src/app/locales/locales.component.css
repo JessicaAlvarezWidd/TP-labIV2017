@@ -6,16 +6,16 @@ input[type=number]::-webkit-inner-spin-button {
 
 }
 
-.body,html {
-    
-    
-    background-image: url(https://img.creativosonline.org/blog/wp-content/uploads/2013/12/fondo-web.jpg);
+.todo{
+    background-image: url(https://st.depositphotos.com/1006734/3449/v/950/depositphotos_34493129-stock-illustration-pizza-seamless-background.jpg);
     background-repeat: no-repeat;
     background-repeat: repeat-x;
     background-position: right top;
     background-attachment: fixed;
     background-size: 100% 100%;
-    }
+}
+
+ 
 
 /*REQUIRED*/
 

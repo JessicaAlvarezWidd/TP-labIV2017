@@ -4,6 +4,15 @@ body, html {
     background-image: linear-gradient(rgb(0, 51, 102), rgb(0, 102, 102));
 }
 
+.container{
+    background-image: url(https://st.depositphotos.com/1006734/3449/v/950/depositphotos_34493129-stock-illustration-pizza-seamless-background.jpg);    
+    background-repeat: no-repeat;
+    background-repeat: repeat-x;
+    background-position: right top;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
 .card-container.card {
     max-width: 350px;
     padding: 40px 40px;
@@ -22,12 +31,11 @@ body, html {
  * Card component
  */
 .card {
-    background-color: rgb(64,64,64);
+    background-color: rgb(218,165,32);
     /* just in case there no content*/
     padding: 20px 25px 30px;
     margin: 0 auto 25px;
     margin-top: 50px;
-    / shadows and rounded borders /
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     border-radius: 2px;
@@ -92,7 +100,7 @@ body, html {
 
 .btn.btn-signin {
     
-    background-color: #660033;    
+    background-color: #BA55D3;    
     padding: 0px;
     font-weight: 700;
     font-size: 14px;
@@ -128,4 +136,13 @@ body, html {
 
 .forgot-password {
     color: rgb(204, 0, 0);
+}
+
+.todo{
+    background-image: url(https://st.depositphotos.com/1006734/3449/v/950/depositphotos_34493129-stock-illustration-pizza-seamless-background.jpg);    
+    background-repeat: no-repeat;
+    background-repeat: repeat-x;
+    background-position: right top;
+    background-attachment: fixed;
+    background-size: 100% 100%;
 }

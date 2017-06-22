@@ -1,0 +1,19 @@
+.todo {
+    
+    
+    background-image: url(https://st.depositphotos.com/1006734/3449/v/950/depositphotos_34493129-stock-illustration-pizza-seamless-background.jpg);
+    background-repeat: no-repeat;
+    background-repeat: repeat-x;
+    background-position: right top;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    }
+
+.container{
+        background-image: url(https://st.depositphotos.com/1006734/3449/v/950/depositphotos_34493129-stock-illustration-pizza-seamless-background.jpg);
+    background-repeat: no-repeat;
+    background-repeat: repeat-x;
+    background-position: right top;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
