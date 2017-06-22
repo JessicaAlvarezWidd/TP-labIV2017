@@ -29,6 +29,9 @@ import { AutService } from './services/auth/aut.service';
 import { VerificarJWTService } from './services/verificar-jwt/verificar-jwt.service';
 //JSON WEB TOKEN.
 import { JwtModule } from './jwt/jwt.module';
+import { FileUploadModule } from "ng2-file-upload";
+import { InicioComponent } from './inicio/inicio.component';
+import { MenuComponent } from './menu/menu.component';//AGREGADO ARCHIVOS
 
 const appRoutes: Routes = [
 { path: 'login', component: LoginComponent },
@@ -39,7 +42,10 @@ const appRoutes: Routes = [
 { path: 'ofertas/:local', component: OfertasComponent },
 { path: 'local-seleccionado/:local', component: LocalSeleccionadoComponent },
 { path: 'abm-local', component: AbmLocalComponent },
-{ path: 'productos/:nombreLocal', component: ProductosComponent }];
+{ path: 'productos/:nombreLocal', component: ProductosComponent },
+{ path: 'info-pedido', component: InfoPedidoComponent },
+{ path: 'inicio', component: InicioComponent },
+{ path: 'menu', component: MenuComponent }];
 
 export const environment = {
   production: false,
@@ -68,6 +74,8 @@ export const environment = {
     AbmLocalComponent,
     InfoPedidoComponent,
     ModificarComponent,
+    InicioComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,7 +85,8 @@ export const environment = {
     AngularFireModule.initializeApp(environment.firebase),    
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    JwtModule
+    JwtModule,
+    FileUploadModule //archivos/imagenes
   ],  
   providers: [WsService,AutService,VerificarJWTService],//AGREGO SERVICIOS.
   bootstrap: [AppComponent]

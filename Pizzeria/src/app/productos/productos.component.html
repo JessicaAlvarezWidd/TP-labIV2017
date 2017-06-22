@@ -1,9 +1,34 @@
-    <form  (ngSubmit)="aceptar()">
+    <!--<form  (ngSubmit)="aceptar()">
       nombre<input type="text" [(ngModel)]="producto.nombre" name="nombre"><br>      
       precio<input type="text" [(ngModel)]="producto.precio" name="precio"><br>
       foto Uno<input type="text" [(ngModel)]="producto.fotoUno" name="fotoUno"><br>
-      <!--foto Dos<input type="text" [(ngModel)]="producto.fotoDos" name="fotoDos"><br>
-      foto Tres<input type="text" [(ngModel)]="producto.fotoTres" name="fotoTres"><br>-->
       <input type="submit"  value="Aceptar">
       <input type="button" (click)="cancelar()" value="Cancelar">
-    </form>
+    </form>-->
+
+
+  <div class="container"><br><br>
+
+  <div class="card card-container" >
+
+    <p id="profile-name" class="profile-name-card"></p>
+
+    <form class="form-signin" (ngSubmit)="aceptar()"><br>
+
+      <input  name="nombre" [(ngModel)]="producto.nombre" type="text" (focusout)="Verificar(1)" (keyup)="Keyup(1)" class="form-control" id="nombre" placeholder="nombre">
+      
+      <input name="precio" [(ngModel)]="producto.precio" type="text"  oninput="this.value=this.value.replace(/[^0-9]/g,'');" (focusout)="Verificar(2)" (keyup)="Keyup(2)" class="form-control" id="password" placeholder="precio"><br>
+
+      <input  name="numero" [(ngModel)]="producto.fotoUno" type="text"   (focusout)="Verificar(1)" (keyup)="Keyup(1)" class="form-control" id="email" placeholder="foto">
+      
+     
+      
+      <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" ><span class="glyphicon glyphicon-plus"></span> ALTA</button>
+      
+      <button class="btn btn-lg btn-success btn-block btn-signin2" type="button" (click)="cancelar()" ><span class="glyphicon glyphicon-remove"></span> CANCELAR</button>
+    
+    </form><!-- /form -->
+  
+  </div><br><br><br><br><br><br><br><br><br><br>
+
+</div>

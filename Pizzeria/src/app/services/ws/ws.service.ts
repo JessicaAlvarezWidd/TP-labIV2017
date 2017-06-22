@@ -19,7 +19,7 @@ export class WsService {
   MoverFoto(foto)
   {
     //return this.http.get("http://localhost/api/index.php/mover/"+foto)
-    return this.http.get("http://www.osmar.hol.es/index.php/mover/"+foto)
+    return this.http.get("http://localhost/ws/index.php/mover/"+foto)
     .toPromise()
     .then( this.extractData )
     .catch( this.handleError );

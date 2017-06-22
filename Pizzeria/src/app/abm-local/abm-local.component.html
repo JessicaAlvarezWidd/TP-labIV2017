@@ -1,13 +1,25 @@
-    <form  (ngSubmit)="aceptar()">
-      nombre<input type="text" [(ngModel)]="local.nombre" name="nombre"><br>      
-      <div>
-        calle<input type="text" [(ngModel)]="local.direccion.calle" name="calle"><br>
-        numero<input type="text" [(ngModel)]="local.direccion.numero" name="numero"><br>
-        barrio<input type="text" [(ngModel)]="local.direccion.barrio" name="barrio"><br>
-      </div>
-      foto Uno<input type="text" [(ngModel)]="local.fotoUno" name="fotoUno"><br>
-      foto Dos<input type="text" [(ngModel)]="local.fotoDos" name="fotoDos"><br>
-      foto Tres<input type="text" [(ngModel)]="local.fotoTres" name="fotoTres"><br>
-      <input type="submit"  value="Aceptar">
-      <input type="button" (click)="cancelar()" value="Cancelar">
-    </form>
+  <div class="container"><br><br>
+
+  <div class="card card-container" >
+
+    <p id="profile-name" class="profile-name-card"></p>
+
+    <form class="form-signin" (ngSubmit)="aceptar()"><br>
+
+      <input  name="nombre" [(ngModel)]="local.nombre" type="text" (focusout)="Verificar(1)" (keyup)="Keyup(1)" class="form-control" id="nombre" placeholder="nombre">
+      
+      <input name="calle" [(ngModel)]="local.direccion.calle" type="text"  (focusout)="Verificar(2)" (keyup)="Keyup(2)" class="form-control" id="password" placeholder="calle"><br>
+
+      <input  name="numero" [(ngModel)]="local.direccion.numero" type="text"  oninput="this.value=this.value.replace(/[^0-9]/g,'');" (focusout)="Verificar(1)" (keyup)="Keyup(1)" class="form-control" id="email" placeholder="numero">
+      
+      <input name="barrio" [(ngModel)]="local.direccion.barrio" type="text" (focusout)="Verificar(2)" (keyup)="Keyup(2)" class="form-control" id="password" placeholder="barrio"><br>
+      
+      <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" ><span class="glyphicon glyphicon-plus"></span> ALTA</button>
+      
+      <button class="btn btn-lg btn-success btn-block btn-signin2" type="button" (click)="cancelar()" ><span class="glyphicon glyphicon-remove"></span> CANCELAR</button>
+    
+    </form><!-- /form -->
+  
+  </div><br><br><br><br><br><br><br><br><br><br>
+
+</div>

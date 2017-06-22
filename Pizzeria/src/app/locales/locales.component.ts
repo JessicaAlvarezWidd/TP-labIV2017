@@ -6,7 +6,7 @@ import {Router} from '@angular/router';
   templateUrl: './locales.component.html',
   styleUrls: ['./locales.component.css']
 })
-export class LocalesComponent implements OnInit {
+export class LocalesComponent {
 
   locales: FirebaseListObservable<any[]>; 
   localesArray : Array<Locales> = [];
@@ -23,8 +23,7 @@ export class LocalesComponent implements OnInit {
               });
   }
 
-  ngOnInit() {
-  }
+  
 
   generateArray(obj){
     this.i++;
@@ -37,6 +36,7 @@ export class LocalesComponent implements OnInit {
     //this.Router.navigateByUrl('/local-seleccionado');
     this.Router.navigate(['/local-seleccionado', local]);
   }
+
 
 }
 
@@ -108,3 +108,5 @@ class productos {
     
     
 }
+
+

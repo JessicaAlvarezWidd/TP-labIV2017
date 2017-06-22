@@ -1,0 +1,17 @@
+input[type=number]::-webkit-inner-spin-button {
+
+    -webkit-appearance: none;
+
+    margin: 0;
+
+}
+.todo {
+    
+    
+    background-image: url(http://data.whicdn.com/images/177614523/large.jpg);
+    background-repeat: no-repeat;
+    background-repeat: repeat-x;
+    background-position: right top;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    }

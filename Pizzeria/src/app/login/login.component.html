@@ -1,7 +1,25 @@
-<div>
-  <input type="text" placeholder="email">
-  <input type="password" placeholder="password">
-  <input type="button" value="ingresar" (click)="login()">
 
-  <input type="button" value="registro" (click)="registro()">
-<div>
+  <div class="container"><br><br>
+
+  <div class="card card-container">
+
+    <img id="profile-img" class="profile-img-card" src="assets/img/usuarios/defecto.png" />
+
+    <p id="profile-name" class="profile-name-card"></p>
+
+    <form class="form-signin"><br>
+
+      <input [(ngModel)]="email" name="email" type="email" [ngStyle]="alertStylesEmail" (focusout)="Verificar(1)" (keyup)="Keyup(1)" class="form-control" id="email" placeholder="Introduce tu email...">
+      
+      <input [(ngModel)]="password" name="password" type="password" [ngStyle]="alertStylesPass" (focusout)="Verificar(2)" (keyup)="Keyup(2)" class="form-control" id="password" placeholder="Contraseña..."><br>
+      
+      <button class="btn btn-lg btn-primary btn-block btn-signin" type="button" (click)="Login()" [disabled]="condicion1 || condicion2" ><span class="glyphicon glyphicon-user"></span> Login</button>
+      
+      <button class="btn btn-lg btn-success btn-block btn-signin2" type="button" (click)="Registro()" ><span class="glyphicon glyphicon-edit"></span> Registrarme!</button>
+    
+    </form><!-- /form -->
+  
+  </div><br><br><br><br><br><br><br><br><br><br>
+
+</div>
+

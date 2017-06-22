@@ -12,19 +12,30 @@ export class AppComponent {
   title = 'app works!';
   clientes: FirebaseListObservable<any[]>;
 
- 
+  
 
   constructor(private Router : Router,
               private db: AngularFireDatabase){
     this.clientes = db.list('/clientes');
     //console.log(this.clientes);
     this.clientes.subscribe(user=>{console.log(user)});
+    localStorage.setItem("bandera","0");
 
    
     this.Router.navigateByUrl('/login');
     
   }
 
+  obtener(){
+      var miBandera = localStorage.getItem("bandera");
+      if(miBandera == "0")
+      {
+        return false;
+      }
+      else{
+        return true;
+      }
+  }
   
 }
 /*

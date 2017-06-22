@@ -1,12 +1,5 @@
-<!--<li *ngFor="let item of clientes | async">
-    {{item.nombre}}
-    {{item.apellido}}
-    {{item.sexo}}
-    {{item.dni}}
-    {{item.direccion.calle}}
-    {{item.direccion.numero}}
-    {{item.direccion.barrio}}
+<div *ngIf="obtener()">
+    <app-menu></app-menu>
+</div>
 
-</li>
--->
 <router-outlet></router-outlet>

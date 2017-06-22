@@ -1,16 +1,71 @@
-<form (ngSubmit)="darAlta(usuario)"> 
-  <div>
-    <input type="text" [(ngModel)]="usuario.email" name="email" placeholder="email" required><br>
-    <input type="password" [(ngModel)]="usuario.pass" name="pass" placeholder="password" required><br>
-    <input type="text" [(ngModel)]="usuario.nombre" name="nombre" placeholder="nombre" required><br>
-    <input type="text" [(ngModel)]="usuario.apellido" name="apellido" placeholder="apellido" required><br>
-    <input type="text" [(ngModel)]="usuario.dni" name="dni" placeholder="dni" required><br>
-    
-      <label>Direccion</label>
-        <input type="text" [(ngModel)]="usuario.calle" name="calle" placeholder="calle" required><br>
-        <input type="text" [(ngModel)]="usuario.numero" name="numero" placeholder="numero" required><br>
-        <input type="text" [(ngModel)]="usuario.barrio" name="barrio" placeholder="barrio" required><br>
-    </div>
-    <button type="submit">Dar alta</button><br>
-  </form>
-<input type="button" value="Volver al Login" (click)="volver()"><br>
+<div class="todo">
+<div class="container">
+  <form role="form" class="form-horizontal col-md-6 col-md-offset-3">
+          <h1 class="page-header">Formulario de registro</h1>
+            <div class="form-group">
+               <label for="nombre" class="col-md-2 control-label">Nombre:</label>
+               <div class="col-md-10">
+                  <input [(ngModel)]="nombre" name="nombre" id="nombre" type="text" maxlength="15" class="form-control" (keyup)="Keyup(1)" [ngStyle]="alertStylesNombre" (focusout)="Verificar(1)"/>
+               </div>
+            </div>
+
+            <div class="form-group">
+               <label for="apelldo" class="col-md-2 control-label">Apellido:</label>
+               <div class="col-md-10">
+                  <input [(ngModel)]="apellido" name="apellido" id="apellido" type="text" maxlength="15" class="form-control" (keyup)="Keyup(2)" [ngStyle]="alertStylesApellido" (focusout)="Verificar(2)"/>
+               </div>
+            </div>
+
+            <div class="form-group">
+               <label for="dni" class="col-md-2 control-label">DNI:</label>
+               <div class="col-md-10">
+                  <!--input id="dni" type="number" maxlength="8" class="form-control" onkeypress="return event.charCode >= 48" (keyup)="Keyup(3)" [ngStyle]="alertStylesDni" (focusout)="Verificar(3)"/-->
+                  <input [(ngModel)]="dni" name="dni" id="dni" type="text" class="form-control" maxlength="8" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (keyup)="Keyup(3)" [ngStyle]="alertStylesDni" (focusout)="Verificar(3)">
+               </div>
+            </div>
+
+            <div class="form-group">
+               <label for="direccion" class="col-md-2 control-label">Direccion:</label>
+               <div class="col-md-10">
+                  <input [(ngModel)]="calle" name="calle" id="calle" placeholder="CALLE" type="text" maxlength="25" class="form-control" (keyup)="Keyup(4)" [ngStyle]="alertStylesEmail" (focusout)="Verificar(4)"/>
+                  <input [(ngModel)]="numeroCalle" name="numero" id="numero" placeholder="NUMERO" type="text" maxlength="25" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (keyup)="Keyup(4)" [ngStyle]="alertStylesEmail" (focusout)="Verificar(4)"/>
+                  <input [(ngModel)]="barrio" name="barrio" id="barrio" placeholder="BARRIO" type="text" maxlength="50" class="form-control" (keyup)="Keyup(4)" [ngStyle]="alertStylesEmail" (focusout)="Verificar(4)"/>
+               </div>
+            </div>
+
+            <div class="form-group">
+               <label for="email" class="col-md-2 control-label">E-Mail:</label>
+               <div class="col-md-10">
+                  <input [(ngModel)]="email" name="email" id="email" type="text" maxlength="25" class="form-control" (keyup)="Keyup(4)" [ngStyle]="alertStylesEmail" (focusout)="Verificar(4)"/>
+               </div>
+            </div>
+              <div class="alert alert-danger" *ngIf="emailRepetido">
+                <strong>Error!</strong> Email ya existente!
+              </div>
+
+            <div class="form-group">
+               <label for="password" class="col-md-2 control-label">Password:</label>
+               <div class="col-md-10">
+                  <input [(ngModel)]="pass" name="pass" id="password" type="password" maxlength="15" class="form-control" (keyup)="Keyup(5)" [ngStyle]="alertStylesPass" (focusout)="Verificar(5)"/>
+               </div>
+            </div>
+            
+            <div class="form-group">
+               <div class="col-md-10">
+                  <input type="file" ng2FileSelect [uploader]="uploader" id="file" (change)="Imagen()" />
+                  <div class="alert alert-danger" *ngIf="errorFoto">
+                <strong>Error!</strong> {{Mensaje}}
+            </div>
+                  <img [src]="foto"  width="200px" height="200px">
+                  
+               </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4"><button type="button" class="btn btn-success btn-block " (click)="Registrar()" [disabled]="condicion1 || condicion2 || condicion3 || condicion4 || condicion5">Registrarme</button></div>
+              <div class="col-sm-4"><button type="reset" class="btn btn-danger btn-block" (click)="Cancelar()">Cancelar</button></div>
+            </div>
+         </form>
+
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
